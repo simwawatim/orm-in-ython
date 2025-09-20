@@ -20,13 +20,13 @@ class PostgresDB:
                 port=self.port
             )
             self.cur = self.conn.cursor()
-            print("✅ Raw psycopg2 connected successfully")
+            print("Raw psycopg2 connected successfully")
         except Exception as e:
-            print("❌ Error connecting to database:", e)
+            print("Error connecting to database:", e)
 
     def close(self):
         if self.cur:
             self.cur.close()
         if self.conn:
             self.conn.close()
-            print("✅ Connection closed")
+            print("Connection closed")
